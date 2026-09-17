@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+/* Theme is driven by <html data-theme="light|dark">, set before paint in index.html. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root {
+  color-scheme: light;
+
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --surface-2: #f3f3f1;
+  --line: #e6e6e3;
+  --line-strong: #d2d2ce;
+
+  --fg: #0b0b0c;
+  --fg-muted: #4a4a52;
+  --fg-subtle: #6b6b73;
+
+  --accent: #0f766e;
+  --accent-strong: #115e59;
+  --accent-fg: #ffffff;
+  --accent-soft: rgb(15 118 110 / 0.08);
+  --accent-line: rgb(15 118 110 / 0.28);
+
+  --warn: #a34a07;
+  --warn-soft: rgb(180 83 9 / 0.1);
+  --danger: #b91c1c;
+  --danger-soft: rgb(185 28 28 / 0.08);
+
+  --grid-line: rgb(11 11 12 / 0.05);
+  --glow: rgb(15 118 110 / 0.1);
+  --shadow-card: 0 1px 2px rgb(11 11 12 / 0.04), 0 8px 24px -12px rgb(11 11 12 / 0.12);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #09090b;
+  --surface: #111114;
+  --surface-2: #18181c;
+  --line: #232328;
+  --line-strong: #34343b;
+
+  --fg: #ededf0;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #8a8a94;
+
+  --accent: #2dd4bf;
+  --accent-strong: #5eead4;
+  --accent-fg: #042f2e;
+  --accent-soft: rgb(45 212 191 / 0.1);
+  --accent-line: rgb(45 212 191 / 0.3);
+
+  --warn: #fbbf24;
+  --warn-soft: rgb(251 191 36 / 0.1);
+  --danger: #f87171;
+  --danger-soft: rgb(248 113 113 / 0.1);
+
+  --grid-line: rgb(255 255 255 / 0.045);
+  --glow: rgb(45 212 191 / 0.12);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+}
+
+@theme {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-line: var(--accent-line);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --shadow-card: var(--shadow-card);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Keeps focused controls clear of the fixed 64px navbar when focus scrolls the page. */
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--accent-line);
+    color: var(--fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Anchor jumps place a section's top hairline 1rem from the top, under the translucent navbar, so the navbar's own
+     border is not doubled. The negative margin offsets the html scroll-padding above. */
+  section[id] {
+    scroll-margin-top: calc(1rem - 4.5rem);
+  }
+}
+
+/* Faint engineering grid, used behind the hero. Pair with a mask for a soft fade. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@utility mask-fade-b {
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 40%, transparent 100%);
+}

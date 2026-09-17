@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dylan Allen — Senior AI Engineer</title>
+    <meta
+      name="description"
+      content="Senior AI Engineer with 8+ years building production web applications, focused on LLM evaluation, RAG, and output guardrails in healthcare and enterprise."
+    />
+    <meta name="author" content="Dylan Allen" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09090b" />
+    <!-- The VITE_SITE_URL placeholders are filled in at build time; without a site URL, vite.config.ts drops those tags. -->
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dylan Allen" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Dylan Allen — Senior AI Engineer" />
+    <meta
+      property="og:description"
+      content="Senior AI Engineer with 8+ years building production web applications, focused on LLM evaluation, RAG, and output guardrails in healthcare and enterprise."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Dylan Allen, Senior AI Engineer: building the checks that catch where models go wrong."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dylan Allen — Senior AI Engineer" />
+    <meta
+      name="twitter:description"
+      content="Senior AI Engineer with 8+ years building production web applications, focused on LLM evaluation, RAG, and output guardrails in healthcare and enterprise."
+    />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Dylan Allen, Senior AI Engineer: building the checks that catch where models go wrong."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dylan Allen",
+        "jobTitle": "Senior AI Engineer",
+        "description": "Senior AI Engineer with 8+ years building production web applications and, for the past four, the LLM systems inside them.",
+        "url": "%VITE_SITE_URL%/",
+        "email": "mailto:dylanallen19968@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "MS",
+          "addressCountry": "US"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Mississippi"
+        },
+        "sameAs": ["https://www.linkedin.com/in/dylan-allen-589882436"],
+        "knowsAbout": [
+          "LLM Evaluation",
+          "Retrieval Augmented Generation",
+          "Prompt Engineering",
+          "Embeddings & Vector Search",
+          "Hallucination Detection",
+          "Output Validation & Guardrails",
+          "Responsible AI",
+          "OpenAI API",
+          "Python",
+          "Java",
+          "TypeScript",
+          "React",
+          "FastAPI",
+          "Node.js",
+          "PostgreSQL",
+          "AWS"
+        ]
+      }
+    </script>
+    <script>
+      // Resolve the theme before first paint to avoid a flash: saved choice, then system preference.
+      ;(function () {
+        var theme
+        try {
+          theme = localStorage.getItem('theme')
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.dataset.theme = theme
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#09090b' : '#fbfbfa')
+      })()
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui, sans-serif">
+        Dylan Allen — Senior AI Engineer. This site needs JavaScript. Reach me at
+        <a href="mailto:dylanallen19968@gmail.com">dylanallen19968@gmail.com</a>.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

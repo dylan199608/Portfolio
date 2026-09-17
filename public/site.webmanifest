@@ -1,0 +1,33 @@
+{
+  "name": "Dylan Allen — Senior AI Engineer",
+  "short_name": "Dylan Allen",
+  "description": "Dylan Allen is a Senior AI Engineer with 8+ years building production web applications and, for the past four, the LLM systems inside them.",
+  "lang": "en-US",
+  "start_url": ".",
+  "scope": ".",
+  "display": "browser",
+  "theme_color": "#09090b",
+  "background_color": "#09090b",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
